@@ -30,19 +30,6 @@ public class MyTriangle extends MyPoint {
                 '}';
     }
 
-    /*public boolean equals(Object o) {
-        if (o == null) {
-            return false;
-        }
-        if (o == this) {
-            return true;
-        }
-        if (getClass() != o.getClass()) {
-            return false;
-        }
-        MyTriangle e = (MyTriangle) o;
-        return (this.getXY() == e.getXY());
-    }*/
     public double getPerimetr(){
         return v1.distance(v2) + v2.distance(v3) + v3.distance(v1);
     }
