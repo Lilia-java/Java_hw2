@@ -19,6 +19,26 @@ public class Employee {
         return firstName;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        if (id != employee.id) return false;
+        if (firstName != null ? !firstName.equals(employee.firstName) : employee.firstName != null) return false;
+        return lastName != null ? lastName.equals(employee.lastName) : employee.lastName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        return result;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -43,7 +63,14 @@ public class Employee {
         return salary+(salary/100*percent);
     }
 
-    String toString(int id, String firstName, String lastName, int salary){
-        return "Employee [ID=" + id + ", name=" + firstName +" "+lastName+", salary=" + salary + "]";
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
