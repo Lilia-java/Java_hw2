@@ -37,9 +37,32 @@ public class MyPoint {
         this.y = y;
     }
 
-    public String toString(){
-        return "X=" + x + ", Y=" + y;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MyPoint myPoint = (MyPoint) o;
+
+        if (x != myPoint.x) return false;
+        return y == myPoint.y;
     }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "MyPoint{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
     public double distance(MyPoint m){
         double d=Math.sqrt((m.x-x)*(m.x-x)+(m.y-y)*(m.y-y));
         return d;

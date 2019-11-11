@@ -5,21 +5,21 @@ public class MyMain {
         Circle circle = new Circle(1.0,"red");
         double square;
         square=circle.getArea();
-        System.out.println(circle.toString(1.0,"red"));
+        System.out.println(circle.toString());
         System.out.println("Square of the circle: " + square);
         System.out.println();
 
         Rectangle rectangle = new Rectangle(1.0f,1.0f);
         double sq;
         double p;
-        System.out.println(rectangle.toString(1.0f,1.0f));
+        System.out.println(rectangle.toString());
         sq=rectangle.getArea();
         p=rectangle.getPerimetr();
         System.out.println("Rectangle - square: " + sq + ", perimetr: "+ p);
         System.out.println();
 
         Employee emp = new Employee(1,"Ivan","Ivanov",30000);
-        System.out.println(emp.toString(1,"Ivan","Ivanov",30000));
+        System.out.println(emp.toString());
         System.out.println("Annual Salary: "+emp.getAnnualSalary());
         System.out.println("Raise Salary: "+emp.raiseSalary(10));
         System.out.println();
@@ -37,8 +37,8 @@ public class MyMain {
         System.out.println(myP.toString());
         System.out.println("Distance: " + myP.distance(m));
         System.out.println();
-        MyPoint myP1 =new MyPoint(0,1);
-        MyPoint myP2 =new MyPoint(1,0);
+        MyPoint myP1 =new MyPoint(0,2);
+        MyPoint myP2 =new MyPoint(2,0);
 
         MyTriangle myT = new MyTriangle(myP,myP1,myP2);
         System.out.println(myT.toString());
